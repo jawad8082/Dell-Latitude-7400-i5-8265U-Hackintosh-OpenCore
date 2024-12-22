@@ -1,0 +1,14 @@
+DefinitionBlock ("", "SSDT", 2, "DRTNIA", "GPI0", 0x00000000)
+{
+    External (GPDI, FieldUnitObj)
+    External (SDM0, FieldUnitObj)
+    
+    Scope (\)
+    {
+        If (_OSI ("Darwin"))
+        {
+            GPDI = One
+            SDM0 = Zero
+        }
+    }
+}
